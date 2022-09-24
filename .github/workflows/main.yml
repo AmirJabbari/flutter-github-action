@@ -24,7 +24,8 @@ jobs:
       - run: flutter build apk
       - name: Push To Releases
         uses: ncipollo/release-action@v1
-        with: 'build/app/outputs/apk/debug/*'
-        tag : v1.0.${{ github.run_number }}
-        token : ${{ secrets.TOKEN }}
+        with:
+          artifacts: 'build/app/outputs/apk/debug/*'
+          tag : v1.0.${{ github.run_number }}
+          token : ${{ secrets.TOKEN }}
 
